@@ -1,11 +1,8 @@
 import 'package:bmi_calculator/pages/result_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import '../components.dart';
 import 'package:flutter/material.dart';
-
 import 'package:bmi_calculator/constants.dart';
-
 import 'package:bmi_calculator/calculator_brain.dart';
 
 enum Gender {
@@ -36,42 +33,43 @@ class _InputPageState extends State<InputPage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
-              child: Row(
-            children: <Widget>[
-              Expanded(
-                child: ReusableCard(
-                  onPress: () {
-                    setState(() {
-                      selectedGender = Gender.male;
-                    });
-                  },
-                  colour: selectedGender == Gender.male
-                      ? kActiveCardColour
-                      : kInactiveCardColour,
-                  cardChild: const IconContent(
-                    icon: FontAwesomeIcons.mars,
-                    label: 'MALE',
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: ReusableCard(
+                    onPress: () {
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
+                    },
+                    colour: selectedGender == Gender.male
+                        ? kActiveCardColour
+                        : kInactiveCardColour,
+                    cardChild: const IconContent(
+                      icon: FontAwesomeIcons.mars,
+                      label: 'MALE',
+                    ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: ReusableCard(
-                  onPress: () {
-                    setState(() {
-                      selectedGender = Gender.female;
-                    });
-                  },
-                  colour: selectedGender == Gender.female
-                      ? kActiveCardColour
-                      : kInactiveCardColour,
-                  cardChild: const IconContent(
-                    icon: FontAwesomeIcons.venus,
-                    label: 'FEMALE',
+                Expanded(
+                  child: ReusableCard(
+                    onPress: () {
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                    },
+                    colour: selectedGender == Gender.female
+                        ? kActiveCardColour
+                        : kInactiveCardColour,
+                    cardChild: const IconContent(
+                      icon: FontAwesomeIcons.venus,
+                      label: 'FEMALE',
+                    ),
                   ),
                 ),
-              ),
-            ],
-          )),
+              ],
+            ),
+          ),
           Expanded(
             child: ReusableCard(
               colour: kActiveCardColour,
@@ -121,7 +119,6 @@ class _InputPageState extends State<InputPage> {
                   ),
                 ],
               ),
-              onPress: () {},
             ),
           ),
           Expanded(
@@ -166,7 +163,6 @@ class _InputPageState extends State<InputPage> {
                         ),
                       ],
                     ),
-                    onPress: () {},
                   ),
                 ),
                 Expanded(
@@ -189,28 +185,28 @@ class _InputPageState extends State<InputPage> {
                             RoundIconButton(
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
-                                setState(
-                                  () {
-                                    age--;
-                                  },
-                                );
+                                setState(() {
+                                  age--;
+                                });
                               },
                             ),
                             const SizedBox(
                               width: 10.0,
                             ),
                             RoundIconButton(
-                                icon: FontAwesomeIcons.plus,
-                                onPressed: () {
-                                  setState(() {
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(
+                                  () {
                                     age++;
-                                  });
-                                })
+                                  },
+                                );
+                              },
+                            )
                           ],
                         )
                       ],
                     ),
-                    onPress: () {},
                   ),
                 ),
               ],

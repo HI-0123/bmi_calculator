@@ -27,7 +27,7 @@ class ResultsPage extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Container(
-              padding: EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(15.0),
               alignment: Alignment.bottomLeft,
               child: const Text(
                 'Your Result',
@@ -58,15 +58,13 @@ class ResultsPage extends StatelessWidget {
                   ),
                 ],
               ),
-              onPress: () {},
             ),
           ),
           BottomButton(
-            buttonTitle: 'RE-CALCULATE',
-            onTap: () {
-              Navigator.pop(context);
-            },
-          )
+              buttonTitle: 'RE-CALCULATE',
+              onTap: () {
+                Navigator.pop(context);
+              })
         ],
       ),
     );
